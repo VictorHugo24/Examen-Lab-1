@@ -21,6 +21,7 @@ public class Rodriguez_Victor_Examen1 {
         
         Scanner lea = new Scanner(System.in);
         Random rand = new Random();
+        lea.useDelimiter("\n");
 
         
         int op = 0;
@@ -131,6 +132,30 @@ public class Rodriguez_Victor_Examen1 {
 
                 case 4:
                     System.out.println("-----Adivinar-----");
+                                        int numeroSecreto = rand.nextInt(100) + 1; 
+        int intentos = 10;
+        boolean acertado = false;
+
+        System.out.println("Se eligio un numero entre 1 y 100. Tiene 10 intentos para adivinarlo");
+
+        for (int i = 1; i <= intentos; i++) {
+            System.out.print("Intento " + i + ": Ingresa un numero: ");
+            int numeroUsuario = lea.nextInt();
+
+            if (numeroUsuario == numeroSecreto) {
+                System.out.println("Felicidades! Adivinaste el numero en " + i + " intentos");
+                acertado = true;
+                break;
+            } else if (numeroUsuario < numeroSecreto) {
+                System.out.println("El numero secreto es mayor");
+            } else {
+                System.out.println("El numero secreto es menor");
+            }
+        }
+
+        if (!acertado) {
+            System.out.println("Se acabaron los intentos El número correcto era: " + numeroSecreto);
+        }
                     break;
                 case 5:
                     System.out.println("Hasta luego...");

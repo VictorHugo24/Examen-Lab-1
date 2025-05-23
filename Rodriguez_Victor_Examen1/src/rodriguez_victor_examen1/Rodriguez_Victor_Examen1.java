@@ -37,7 +37,7 @@ public class Rodriguez_Victor_Examen1 {
             System.out.print("Ingrese una opcion: ");
             op = lea.nextInt();
             
-            if(op<1 || op > 5){
+            if(op < 1 || op > 5){
                 System.out.println("Opcion no valida!!!");
             }
             switch(op){
@@ -60,8 +60,35 @@ public class Rodriguez_Victor_Examen1 {
                     break;
                 case 2:
                     System.out.println("-----Clave-----");
+                    System.out.print("Ingresa el mensaje a cifrar/descifrar: ");
+                    String mensaje = lea.next();
+
+        String resultado = "";
+
+        for (int i = 0; i < mensaje.length(); i++) {
+            char c = mensaje.charAt(i);
+
+            
+            if (c >= 'a' && c <= 'z') {
+                char invertida = (char) ('z' - (c - 'a'));
+                resultado += invertida;
+            }
+            
+            else if (c >= 'A' && c <= 'Z') {
+                char invertida = (char) ('Z' - (c - 'A'));
+                resultado += invertida;
+            }
+            
+            else {
+                resultado += c;
+            }
+        }
+
+        System.out.println("Mensaje cifrado/descifrado: " + resultado);
+
                     break;
                 case 3:
+                    
                 
                     boolean condicion = false;
                     do{
